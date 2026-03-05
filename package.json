@@ -1,0 +1,24 @@
+{
+  "name": "atividade-2---programa-o-para-internet",
+  "version": "1.0.0",
+  "description": "Desenvolvimento backend da Atividade 2",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SullyvanOgawa/Atividade-2---Programa-o-para-Internet.git"
+  },
+  "author": "Sullyvan Ogawa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SullyvanOgawa/Atividade-2---Programa-o-para-Internet/issues"
+  },
+  "homepage": "https://github.com/SullyvanOgawa/Atividade-2---Programa-o-para-Internet#readme",
+  "dependencies": {
+    "mysql2": "^3.18.2"
+  }
+}

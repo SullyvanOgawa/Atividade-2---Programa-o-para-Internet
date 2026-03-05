@@ -33,9 +33,7 @@ export default class Curso{
     }
 
     toString(){
-        return `Nome: ${this.#nome} 
-                Descrição: ${this.#descricao}
-                Carga Horária: ${this.#cargaHoraria}`;
+        return `Nome: ${this.#nome} - Descrição: ${this.#descricao} -Carga Horária: ${this.#cargaHoraria}`;
     }
 
     async gravar(){
@@ -46,5 +44,15 @@ export default class Curso{
     async editar(){
         const cursoDB = new CursoDB();
         await cursoDB.editar(this);
+    }
+
+    async excluir(){
+        const cursoDB = new CursoDB();
+        await cursoDB.excluir(this);
+    }
+
+    async consultar(termo){
+        const cursoDB = new CursoDB();
+        return await cursoDB.consultar(termo);
     }
 }

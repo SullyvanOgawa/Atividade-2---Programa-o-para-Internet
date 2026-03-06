@@ -1,9 +1,11 @@
-import CursoDB from '../DB/cursoDB.js'; 
+import CursoDB from '../DB/cursoDB.js';
+
 export default class Curso{
     #id
     #nome
     #descricao
     #cargaHoraria
+    #professor
 
     get id(){
         return this.#id
@@ -25,15 +27,20 @@ export default class Curso{
         return this.#cargaHoraria
     }
 
-    constructor(id, nome, descricao, cargaHoraria){
+    get professor(){
+        return this.#professor
+    }
+
+    constructor(id, nome, descricao, cargaHoraria, professor){
         this.#id = id;
         this.#nome = nome;
         this.#descricao = descricao;
         this.#cargaHoraria = cargaHoraria;
+        this.#professor = professor;
     }
 
     toString(){
-        return `Nome: ${this.#nome} - Descrição: ${this.#descricao} -Carga Horária: ${this.#cargaHoraria}`;
+        return `Nome: ${this.#nome} - Descrição: ${this.#descricao} - Carga Horária: ${this.#cargaHoraria} - Professor: ${this.#professor}`;
     }
 
     async gravar(){

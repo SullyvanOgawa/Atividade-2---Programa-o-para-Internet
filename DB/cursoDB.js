@@ -25,8 +25,7 @@ export default class CursoDB{
 
      async editar(curso){
         if(curso instanceof Curso){
-            const sql = `UPDATE cursos SET curso_nome=?, curso_descricao=?, curso_carga_horaria=?, prof_id=?
-                                       WHERE curso_id=?`;
+            const sql = `UPDATE cursos SET curso_nome=?, curso_descricao=?, curso_carga_horaria=?, prof_id=? WHERE curso_id=?`;
             
             const parametros = [
                 curso.nome, 

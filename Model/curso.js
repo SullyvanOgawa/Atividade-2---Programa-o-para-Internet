@@ -40,7 +40,11 @@ export default class Curso{
     }
 
     toString(){
-        return `Nome: ${this.#nome} - Descrição: ${this.#descricao} - Carga Horária: ${this.#cargaHoraria} - Professor: ${this.#professor}`;
+        return `
+        Curso: ${this.#nome} 
+        Descrição: ${this.#descricao}
+        Carga Horária: ${this.#cargaHoraria}
+        Professor: ${this.#professor}`;
     }
 
     async gravar(){

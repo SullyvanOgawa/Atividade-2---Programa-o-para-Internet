@@ -27,7 +27,8 @@ export default class Professor{
     }
 
     toString(){
-        return `${this.#nome} - Especialidade: ${this.#especialidade}`
+        return `${this.#nome} 
+        Especialidade: ${this.#especialidade}`;
     }
 
    async gravar(){

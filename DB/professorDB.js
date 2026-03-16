@@ -53,13 +53,13 @@ export default class ProfessorDB{
         let sql = "";
         let parametros = [];
 
-        if(isNaN(Number(termo))){
-            sql = `SELECT * FROM professores WHERE prof_nome LIKE ?`;
-            parametros = [`%${termo}%`];
-        }
-        else{
+        if(!isNaN(Number(termo)) && Number(termo) > 0){
             sql = `SELECT * FROM professores WHERE prof_id=?`;
             parametros = [termo];
+        }
+        else{
+            sql = `SELECT * FROM professores WHERE prof_nome LIKE ?`;
+            parametros = [`%${termo}%`];
         }
 
         const conexao = await obterConexao();

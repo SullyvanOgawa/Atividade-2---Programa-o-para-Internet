@@ -50,4 +50,12 @@ export default class Professor{
         const professorDB = new ProfessorDB();
         return await professorDB.consultar(termo);
     }
+
+    toJSON(){
+        return{
+            id: this.#id,
+            nome: this.#nome,
+            especialidade: this.#especialidade
+        }
+    }
 }

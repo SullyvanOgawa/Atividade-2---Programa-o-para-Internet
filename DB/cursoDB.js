@@ -56,20 +56,7 @@ export default class CursoDB{
         let sql = "";
         let parametros = [];
 
-        if(isNaN(Number(termo))){
-        sql = ` SELECT  c.curso_nome,
-                        c.curso_descricao,
-                        c.curso_carga_horaria,
-                        p.prof_nome,
-                        p.prof_especialidade 
-                FROM cursos c
-                INNER JOIN professores p 
-                ON c.prof_id = p.prof_id
-                WHERE c.curso_nome LIKE ?`;
-
-            parametros = [`%${termo}%`];
-        }
-        else{
+        if(!isNaN(Number(termo)) && Number(termo) > 0){
             sql = ` SELECT  c.curso_nome,
                             c.curso_descricao,
                             c.curso_carga_horaria,
@@ -79,8 +66,22 @@ export default class CursoDB{
                     INNER JOIN professores p 
                     ON c.prof_id = p.prof_id
                     WHERE c.curso_id = ?`;
-
             parametros = [termo];
+            
+        }
+        else{
+
+            sql = ` SELECT  c.curso_nome,
+                            c.curso_descricao,
+                            c.curso_carga_horaria,
+                            p.prof_nome,
+                            p.prof_especialidade 
+                    FROM cursos c
+                    INNER JOIN professores p 
+                    ON c.prof_id = p.prof_id
+                    WHERE c.curso_nome LIKE ?`;
+            parametros = [`%${termo}%`];
+           
         }
 
         const conexao = await obterConexao();

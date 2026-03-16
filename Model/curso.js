@@ -66,4 +66,14 @@ export default class Curso{
         const cursoDB = new CursoDB();
         return await cursoDB.consultar(termo);
     }
+
+    toJSON(){
+        return{
+            id: this.#id,
+            nome: this.#nome,
+            descricao: this.#descricao,
+            cargaHoraria: this.#cargaHoraria,
+            professor: this.#professor
+        }
+    }
 }

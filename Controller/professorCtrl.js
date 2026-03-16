@@ -13,28 +13,28 @@
                 .then(() => {
                     resposta.status(201).json({
                         "status": true,
-                        "mensagem": "Professor gravado com sucesso!!!", 
+                        "mensagem": "Professor cadastrado com sucesso!!!", 
                         "id": professor.id
                     });
                 })
                 .catch((erro) => {
                     resposta.status(500).json({
                         "status": false,
-                        "mensagem": "Nao foi possivel cadastrar o professor. Erro: " + erro.message
+                        "mensagem": "Não foi possível cadastrar o professor. Erro: " + erro.message
                     });
                 });
             }
             else{
                 resposta.status(400).json({
                     "status": false,
-                    "mensagem": "Todas as informacoes devem ser preenchidas!!!"
+                    "mensagem": "Todas os campos devem ser preenchidas!!!"
                 });
             }
         }
         else{
             resposta.status(405).json({
                 "status": false,
-                "mensagem": "Metodo nao permitido"
+                "mensagem": "Metodo nao permitido. Consulte a documentação da API"
             });
         }
     }
@@ -66,7 +66,7 @@
             else{
                 resposta.status(400).json({
                     "status": false,
-                    "mensagem": "Todos as informacoes devem ser preenchidas!!!"
+                    "mensagem": "Todos os campos devem ser preenchidos!!!"
                 }); 
             }
         }
@@ -131,7 +131,7 @@
             .then(listaProfessores => {
                 resposta.status(200).json({
                     "status": true,
-                    "mensagem": "Consulta realizada com sucesso!!!",
+                    "mensagem": "Segue Abaixo a Lista atualizada de Professores",
                     "professores": listaProfessores
                 });
             })

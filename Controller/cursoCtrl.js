@@ -18,14 +18,14 @@ export default class CursoCtrl{
                 curso.gravar().then(() => {
                     resposta.status(201).json({
                         "status": true,
-                        "mensagem": "Curso gravado com sucesso!!!", 
+                        "mensagem": "Curso cadastrado com sucesso!!!", 
                         "id": curso.id
                     });
                 })
                 .catch((erro) => {
                     resposta.status(500).json({
                         "status": false,
-                        "mensagem": "Não foi possível gravar o cliente. Erro: " + erro.message
+                        "mensagem": "Não foi possível cadastrar o curso. Erro: " + erro.message
                     });
                 });
 
@@ -33,7 +33,7 @@ export default class CursoCtrl{
             else{
                 resposta.status(400).json({
                     "status": false,
-                    "mensagem": "Todas as informações devem ser preenchidas!!!"
+                    "mensagem": "Todas os campos devem ser preenchidos!!!"
                 });
             }
         }
@@ -144,7 +144,7 @@ export default class CursoCtrl{
             .then(listaCursos => {
                 resposta.status(200).json({
                     "status": true,
-                    "mensagem": "Consulta realizada com sucesso!!!",
+                    "mensagem": "Segue Abaixo todos os cursos disponíveis",
                     "cursos": listaCursos
                 });
             })

@@ -52,6 +52,7 @@ const app = express();
 
 app.use(express.json());
 app.use("/professores", rotaProfessores);
+app.use("/cursos", rotaCursos);
 
 
 app.listen(port, localhost, () => console.log(`API Executando na porta ${port}`));

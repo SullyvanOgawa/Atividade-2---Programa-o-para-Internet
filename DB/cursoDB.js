@@ -57,7 +57,8 @@ export default class CursoDB{
         let parametros = [];
 
         if(!isNaN(Number(termo)) && Number(termo) > 0){
-            sql = ` SELECT  c.curso_nome,
+            sql = ` SELECT  c.curso_id,
+                            c.curso_nome,
                             c.curso_descricao,
                             c.curso_carga_horaria,
                             p.prof_nome,
@@ -71,7 +72,8 @@ export default class CursoDB{
         }
         else{
 
-            sql = ` SELECT  c.curso_nome,
+            sql = ` SELECT  c.curso_id,
+                            c.curso_nome,
                             c.curso_descricao,
                             c.curso_carga_horaria,
                             p.prof_nome,

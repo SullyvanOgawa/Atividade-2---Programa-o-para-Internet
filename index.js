@@ -45,10 +45,15 @@
 import express from "express";
 import rotaCursos from "./Routes/rotaCursos.js";
 import rotaProfessores from "./Routes/rotaProfessor.js";
+import cors from 'cors';
 
 const localhost = '0.0.0.0';
 const port = 5000;
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:4000'
+}));
 
 app.use(express.json());
 app.use("/professores", rotaProfessores);

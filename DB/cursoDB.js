@@ -61,6 +61,7 @@ export default class CursoDB{
                             c.curso_nome,
                             c.curso_descricao,
                             c.curso_carga_horaria,
+                            p.prof_id,
                             p.prof_nome,
                             p.prof_especialidade
                     FROM cursos c
@@ -77,6 +78,7 @@ export default class CursoDB{
                             c.curso_nome,
                             c.curso_descricao,
                             c.curso_carga_horaria,
+                            p.prof_id,
                             p.prof_nome,
                             p.prof_especialidade 
                     FROM cursos c

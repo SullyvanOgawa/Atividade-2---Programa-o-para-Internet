@@ -54,11 +54,17 @@ export default class ProfessorDB{
         let parametros = [];
 
         if(!isNaN(Number(termo)) && Number(termo) > 0){
-            sql = `SELECT * FROM professores WHERE prof_id=?`;
+            sql = `SELECT   p.prof_id, 
+                            p.prof_nome, 
+                            p.prof_especialidade
+                    FROM professores p WHERE prof_id=?`;
             parametros = [termo];
         }
         else{
-            sql = `SELECT * FROM professores WHERE prof_nome LIKE ?`;
+            sql = ` SELECT p.prof_id, 
+                            p.prof_nome, 
+                            p.prof_especialidade
+                    FROM professores p WHERE prof_nome LIKE ?`;
             parametros = [`%${termo}%`];
         }
 

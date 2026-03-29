@@ -66,7 +66,8 @@ export default class CursoDB{
                     FROM cursos c
                     INNER JOIN professores p 
                     ON c.prof_id = p.prof_id
-                    WHERE c.curso_id = ?`;
+                    WHERE c.curso_id = ?
+                    ORDER BY c.curso_id ASC`;
             parametros = [termo];
             
         }
@@ -81,7 +82,8 @@ export default class CursoDB{
                     FROM cursos c
                     INNER JOIN professores p 
                     ON c.prof_id = p.prof_id
-                    WHERE c.curso_nome LIKE ?`;
+                    WHERE c.curso_nome LIKE ?
+                    ORDER BY c.curso_id ASC`;
             parametros = [`%${termo}%`];
            
         }
